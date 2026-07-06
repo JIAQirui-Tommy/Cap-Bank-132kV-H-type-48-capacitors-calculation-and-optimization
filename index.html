@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>132kV H Type 48 Capacitor Bank Unbalanced Current</title>
+    <link rel="stylesheet" href="./styles.css?v=three-phase-a-20260706" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <h1>132kV H Type 48 Capacitor Bank</h1>
+          <p>
+            C1/C2/C3/C4 form the H bridge: C1 top left, C2 bottom left,
+            C3 top right, and C4 bottom right. Capacitors are numbered 1-48.
+          </p>
+        </div>
+        <div class="actions">
+          <button id="loadFile" type="button">Load Current Phase</button>
+          <input id="fileInput" type="file" accept=".xlsx,.xls,.csv,.txt" hidden />
+          <button id="loadExample" type="button">Example</button>
+          <button id="resetAll" type="button">Reset Phase</button>
+        </div>
+      </header>
+
+      <section class="settings">
+        <label>
+          <span>System voltage kV</span>
+          <input id="systemVoltage" type="number" value="132" min="0" step="0.1" />
+        </label>
+        <label>
+          <span>Voltage basis</span>
+          <select id="voltageBasis">
+            <option value="phase" selected>Line-to-neutral, V = kV / sqrt(3)</option>
+            <option value="direct">Direct across H bridge</option>
+          </select>
+        </label>
+        <label>
+          <span>Frequency Hz</span>
+          <input id="frequency" type="number" value="50" min="0" step="1" />
+        </label>
+        <label>
+          <span>Nominal capacitance uF</span>
+          <input id="nominalCap" type="number" value="21.89" min="0" step="0.01" />
+        </label>
+        <label>
+          <span>Swap pairs</span>
+          <select id="swapPairs">
+            <option value="auto" selected>Auto: fewest pairs for best</option>
+            <option value="1">1 pair</option>
+            <option value="2">2 pairs</option>
+            <option value="3">3 pairs</option>
+            <option value="4">4 pairs</option>
+            <option value="5">5 pairs</option>
+            <option value="6">6 pairs</option>
+          </select>
+        </label>
+      </section>
+      <p id="fileStatus" class="file-status" aria-live="polite"></p>
+
+      <section class="phase-board" aria-label="Phase selection and summary">
+        <div class="phase-tabs" role="tablist" aria-label="Phase selector">
+          <button class="phase-tab is-active" type="button" data-phase="L1" role="tab" aria-selected="true">L1</button>
+          <button class="phase-tab" type="button" data-phase="L2" role="tab" aria-selected="false">L2</button>
+          <button class="phase-tab" type="button" data-phase="L3" role="tab" aria-selected="false">L3</button>
+        </div>
+        <div id="phaseOverview" class="phase-overview" aria-live="polite"></div>
+      </section>
+
+      <section class="metrics" aria-live="polite">
+        <article>
+          <span>Current unbalanced current</span>
+          <strong id="currentUnbalance">0.000 mA</strong>
+        </article>
+        <article>
+          <span>After recommended swaps</span>
+          <strong id="bestUnbalance">0.000 mA</strong>
+        </article>
+        <article>
+          <span>Improvement</span>
+          <strong id="improvement">0.0%</strong>
+        </article>
+        <article>
+          <span>Bridge balance error</span>
+          <strong id="balanceError">0.0000%</strong>
+        </article>
+      </section>
+
+      <section class="main-grid">
+        <section class="bridge-panel" aria-label="H type capacitor bridge">
+          <div class="bridge-heading">
+            <h2>H Type Layout</h2>
+            <div class="button-row">
+              <button id="optimize" type="button">Optimize swaps</button>
+              <button id="applyBest" type="button" disabled>Apply</button>
+              <button id="exportCsv" type="button" disabled>Export CSV</button>
+            </div>
+          </div>
+          <div class="bridge-diagram">
+            <div class="bus top-bus"><span class="activePhaseLabel">L1</span> 132kV source</div>
+            <div class="arms" id="arms"></div>
+            <div class="relay-line"><span>relay / CT branch, approximate short-circuit model</span></div>
+            <div class="bus bottom-bus"><span class="activePhaseLabel">L1</span> neutral / ground</div>
+          </div>
+        </section>
+
+        <aside class="side">
+          <section class="panel">
+            <h2>Swap Recommendation</h2>
+            <ol id="swapList" class="swap-list"></ol>
+          </section>
+
+          <section class="panel">
+            <h2>Best By Number Of Swap Pairs</h2>
+            <div id="depthTable" class="depth-table"></div>
+          </section>
+
+          <section class="panel">
+            <h2>Calculation Details</h2>
+            <div id="details" class="details"></div>
+          </section>
+        </aside>
+      </section>
+
+      <section class="formula">
+        <h2>Calculation Model</h2>
+        <p>
+          Parallel group: <code>G = Ca + Cb</code>. Arm capacitance:
+          <code>Carm = 1 / (1/G1 + ... + 1/G6)</code>. With relay treated as an
+          approximate short, top arms C1/C3 are in parallel and bottom arms C2/C4 are in
+          parallel. The displayed unbalanced current is
+          <code>|IA - IC|</code>, equivalent to
+          <code>wV |C1*C4 - C3*C2| / (C1 + C2 + C3 + C4)</code>.
+        </p>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="./app.js?v=three-phase-a-20260706"></script>
+  </body>
+</html>
