@@ -2,6 +2,8 @@
 
 Static web tool for calculating and reducing unbalanced current in a 132kV H type capacitor bank.
 
+Live app: https://jiaqirui-tommy.github.io/Cap-Bank-132kV-H-type-48-capacitors-calculation-and-optimization/
+
 ## Configuration
 
 - 48 capacitors total
@@ -15,3 +17,4 @@ Static web tool for calculating and reducing unbalanced current in a 132kV H typ
 ## Use
 
 Open `index.html` in a browser, enter the measured capacitance values, choose the number of swap pairs, and run `Optimize swaps`.
+Use `Download Template` to get `capbank_48_template.xlsx`, fill the `Capacitance uF` column, then load it back into the current phase.

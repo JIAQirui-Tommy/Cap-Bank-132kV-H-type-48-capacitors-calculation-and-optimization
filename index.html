@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>132kV H Type 48 Capacitor Bank Unbalanced Current</title>
-    <link rel="stylesheet" href="./styles.css?v=three-phase-a-20260706" />
+    <link rel="stylesheet" href="./styles.css?v=template-footer-20260708" />
   </head>
   <body>
     <main class="app">
@@ -18,6 +18,7 @@
         </div>
         <div class="actions">
           <button id="loadFile" type="button">Load Current Phase</button>
+          <a class="button-link" href="./capbank_48_template.xlsx" download>Download Template</a>
           <input id="fileInput" type="file" accept=".xlsx,.xls,.csv,.txt" hidden />
           <button id="loadExample" type="button">Example</button>
           <button id="resetAll" type="button">Reset Phase</button>
@@ -134,9 +135,11 @@
           <code>wV |C1*C4 - C3*C2| / (C1 + C2 + C3 + C4)</code>.
         </p>
       </section>
+
+      <footer class="site-footer">Created by Tommy JIA</footer>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-    <script src="./app.js?v=three-phase-a-20260706"></script>
+    <script src="./app.js?v=template-footer-20260708"></script>
   </body>
 </html>
