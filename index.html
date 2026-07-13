@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>132kV H Type 48 Capacitor Bank Unbalanced Current</title>
-    <link rel="stylesheet" href="./styles.css?v=simplified-voltage-20260713" />
+    <link rel="stylesheet" href="./styles.css?v=visual-before-calculation-20260713" />
   </head>
   <body>
     <main class="app">
@@ -91,42 +91,6 @@
           <span>Bridge balance error</span>
           <strong id="balanceError">0.0000%</strong>
         </article>
-      </section>
-
-      <section class="main-grid">
-        <section class="bridge-panel" aria-label="H type capacitor bridge">
-          <div class="bridge-heading">
-            <h2>H Type Layout</h2>
-            <div class="button-row">
-              <button id="optimize" type="button">Optimize swaps</button>
-              <button id="applyBest" type="button" disabled>Apply</button>
-              <button id="exportCsv" type="button" disabled>Export CSV</button>
-            </div>
-          </div>
-          <div class="bridge-diagram">
-            <div class="bus top-bus"><span class="activePhaseLabel">L1</span> 132kV source</div>
-            <div class="arms" id="arms"></div>
-            <div class="relay-line"><span>relay / CT branch, approximate short-circuit model</span></div>
-            <div class="bus bottom-bus"><span class="activePhaseLabel">L1</span> neutral / ground</div>
-          </div>
-        </section>
-
-        <aside class="side">
-          <section class="panel">
-            <h2>Swap Recommendation</h2>
-            <ol id="swapList" class="swap-list"></ol>
-          </section>
-
-          <section class="panel">
-            <h2>Best By Number Of Swap Pairs</h2>
-            <div id="depthTable" class="depth-table"></div>
-          </section>
-
-          <section class="panel">
-            <h2>Calculation Details</h2>
-            <div id="details" class="details"></div>
-          </section>
-        </aside>
       </section>
 
       <section class="visual-guide" aria-label="Physical capacitor position guide">
@@ -222,6 +186,42 @@
         </div>
       </section>
 
+      <section class="main-grid">
+        <section class="bridge-panel" aria-label="H type capacitor bridge">
+          <div class="bridge-heading">
+            <h2>H Type Layout</h2>
+            <div class="button-row">
+              <button id="optimize" type="button">Optimize swaps</button>
+              <button id="applyBest" type="button" disabled>Apply</button>
+              <button id="exportCsv" type="button" disabled>Export CSV</button>
+            </div>
+          </div>
+          <div class="bridge-diagram">
+            <div class="bus top-bus"><span class="activePhaseLabel">L1</span> 132kV source</div>
+            <div class="arms" id="arms"></div>
+            <div class="relay-line"><span>relay / CT branch, approximate short-circuit model</span></div>
+            <div class="bus bottom-bus"><span class="activePhaseLabel">L1</span> neutral / ground</div>
+          </div>
+        </section>
+
+        <aside class="side">
+          <section class="panel">
+            <h2>Swap Recommendation</h2>
+            <ol id="swapList" class="swap-list"></ol>
+          </section>
+
+          <section class="panel">
+            <h2>Best By Number Of Swap Pairs</h2>
+            <div id="depthTable" class="depth-table"></div>
+          </section>
+
+          <section class="panel">
+            <h2>Calculation Details</h2>
+            <div id="details" class="details"></div>
+          </section>
+        </aside>
+      </section>
+
       <section class="formula">
         <h2>Calculation Model</h2>
         <p>
@@ -238,6 +238,6 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-    <script src="./app.js?v=simplified-voltage-20260713"></script>
+    <script src="./app.js?v=visual-before-calculation-20260713"></script>
   </body>
 </html>
