@@ -607,13 +607,13 @@ select {
 
 .visual-guide {
   margin-top: 14px;
-  padding: 15px;
+  padding: 12px;
 }
 
 .visual-head {
   display: grid;
-  gap: 6px;
-  margin-bottom: 14px;
+  gap: 5px;
+  margin-bottom: 10px;
 }
 
 .visual-head p {
@@ -625,14 +625,18 @@ select {
 .physical-stack {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
 }
 
 .physical-layer {
-  border: 1px solid var(--line);
+  border: 2px solid #223246;
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
+}
+
+.rear-layer {
+  border-color: #2d4638;
 }
 
 .layer-title {
@@ -640,9 +644,14 @@ select {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
-  padding: 11px 12px;
-  border-bottom: 1px solid var(--line);
-  background: #f8fafc;
+  padding: 9px 11px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  background: #223246;
+  color: #fff;
+}
+
+.rear-layer .layer-title {
+  background: #2d4638;
 }
 
 .layer-title strong {
@@ -650,14 +659,16 @@ select {
 }
 
 .layer-title span {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 12px;
 }
 
 .physical-arms {
   display: grid;
-  gap: 12px;
-  padding: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  padding: 9px;
+  background: #f7f9fb;
 }
 
 .physical-arm {
@@ -667,7 +678,7 @@ select {
 }
 
 .physical-arm-title {
-  padding: 9px 10px;
+  padding: 7px 9px;
   border-bottom: 1px solid #e4eaf0;
   font-weight: 800;
   background: #fff;
@@ -675,8 +686,8 @@ select {
 
 .rack-guide {
   display: grid;
-  gap: 8px;
-  padding: 10px;
+  gap: 6px;
+  padding: 8px;
   background:
     linear-gradient(90deg, transparent 0 47%, #d8e0e8 47% 53%, transparent 53%),
     #fbfcfd;
@@ -685,7 +696,7 @@ select {
 .rack-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 7px;
 }
 
 .guide-group {
@@ -694,10 +705,10 @@ select {
   grid-template-areas:
     "label caps"
     "ids ids";
-  gap: 6px 8px;
+  gap: 4px 6px;
   align-items: center;
   min-width: 0;
-  padding: 8px;
+  padding: 6px;
   border: 1px solid #dbe3eb;
   border-radius: 7px;
   background: #fff;
@@ -724,7 +735,7 @@ select {
   justify-content: space-between;
   width: 100%;
   max-width: 150px;
-  min-width: 92px;
+  min-width: 86px;
   justify-self: stretch;
   padding: 0 4px;
 }
@@ -740,7 +751,7 @@ select {
   position: relative;
   display: block;
   width: 24px;
-  height: 82px;
+  height: 74px;
   border: 2px solid #17212b;
   border-radius: 4px;
   background: linear-gradient(90deg, #ffffff, #eef2f5);
@@ -793,9 +804,6 @@ code {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .physical-stack {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 920px) {
@@ -954,7 +962,8 @@ code {
   }
 
   .physical-arms {
-    padding: 10px;
+    grid-template-columns: 1fr;
+    padding: 8px;
   }
 
   .rack-row {
