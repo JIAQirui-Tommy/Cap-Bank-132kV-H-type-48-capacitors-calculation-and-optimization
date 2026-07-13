@@ -720,15 +720,17 @@ select {
 .cap-pair {
   grid-area: caps;
   display: grid;
-  grid-template-columns: repeat(2, minmax(20px, 1fr));
-  gap: 7px;
+  grid-template-columns: repeat(2, 24px);
+  gap: 12px;
   align-items: center;
+  justify-content: center;
 }
 
 .cap-pair i {
   position: relative;
   display: block;
-  height: 64px;
+  width: 24px;
+  height: 82px;
   border: 2px solid #17212b;
   border-radius: 4px;
   background: linear-gradient(90deg, #ffffff, #eef2f5);
@@ -739,8 +741,8 @@ select {
   content: "";
   position: absolute;
   left: 50%;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   border: 2px solid #17212b;
   border-radius: 50%;
   background: #fff;
@@ -748,11 +750,11 @@ select {
 }
 
 .cap-pair i::before {
-  top: 8px;
+  top: 11px;
 }
 
 .cap-pair i::after {
-  bottom: 8px;
+  bottom: 11px;
 }
 
 .site-footer {
@@ -963,7 +965,27 @@ code {
   }
 
   .cap-pair i {
-    height: 56px;
+    width: 22px;
+    height: 72px;
+  }
+
+  .cap-pair {
+    grid-template-columns: repeat(2, 22px);
+    gap: 10px;
+  }
+
+  .cap-pair i::before,
+  .cap-pair i::after {
+    width: 11px;
+    height: 11px;
+  }
+
+  .cap-pair i::before {
+    top: 10px;
+  }
+
+  .cap-pair i::after {
+    bottom: 10px;
   }
 
   .swap-title,
