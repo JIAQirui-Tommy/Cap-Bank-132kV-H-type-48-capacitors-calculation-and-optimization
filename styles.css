@@ -719,11 +719,21 @@ select {
 
 .cap-pair {
   grid-area: caps;
-  display: grid;
-  grid-template-columns: repeat(2, 24px);
-  gap: 12px;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 150px;
+  min-width: 92px;
+  justify-self: stretch;
+  padding: 0 4px;
+}
+
+@media (min-width: 921px) {
+  .cap-pair {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .cap-pair i {
@@ -970,8 +980,9 @@ code {
   }
 
   .cap-pair {
-    grid-template-columns: repeat(2, 22px);
-    gap: 10px;
+    max-width: none;
+    min-width: 76px;
+    padding: 0 6px;
   }
 
   .cap-pair i::before,
