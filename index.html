@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>132kV H Type 48 Capacitor Bank Unbalanced Current</title>
-    <link rel="stylesheet" href="./styles.css?v=visual-before-calculation-20260713" />
+    <link rel="stylesheet" href="./styles.css?v=position-labels-20260713" />
   </head>
   <body>
     <main class="app">
@@ -12,8 +12,8 @@
         <div>
           <h1>132kV H Type 48 Capacitor Bank</h1>
           <p>
-            C1/C2/C3/C4 form the H bridge: C1 top left, C2 bottom left,
-            C3 top right, and C4 bottom right. Capacitors are numbered 1-48.
+            C1/C2/C3/C4 form the H bridge: C1 is Front Top, C2 is Front Bottom,
+            C3 is Rear Top, and C4 is Rear Bottom. Capacitors are numbered 1-48.
           </p>
         </div>
         <div class="actions">
@@ -96,17 +96,17 @@
       <section class="visual-guide" aria-label="Physical capacitor position guide">
         <div class="visual-head">
           <h2>Visual Guide</h2>
-          <p>Front view mapping: C1/C2 are at the front, C3/C4 are at the rear. Each capacitor is shown as a vertical block with two terminal circles. Two capacitors form one group; two groups sit side by side; three rows make G1-G6.</p>
+          <p>Front view mapping: C1/C2 are Front Top/Front Bottom, C3/C4 are Rear Top/Rear Bottom. Each capacitor is shown as a vertical block with two terminal circles. Two capacitors form one group; two groups sit side by side; three rows make G1-G6.</p>
         </div>
         <div class="physical-stack">
           <section class="physical-layer">
             <div class="layer-title">
               <strong>Front</strong>
-              <span>C1 top, C2 bottom</span>
+              <span>Front Top, Front Bottom</span>
             </div>
             <div class="physical-arms">
               <div class="physical-arm">
-                <div class="physical-arm-title">C1 Front Top</div>
+                <div class="physical-arm-title">Front Top</div>
                 <div class="rack-guide">
                   <div class="rack-row">
                     <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>1-2</small></div>
@@ -123,7 +123,7 @@
                 </div>
               </div>
               <div class="physical-arm">
-                <div class="physical-arm-title">C2 Front Bottom</div>
+                <div class="physical-arm-title">Front Bottom</div>
                 <div class="rack-guide">
                   <div class="rack-row">
                     <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>13-14</small></div>
@@ -144,11 +144,11 @@
           <section class="physical-layer rear-layer">
             <div class="layer-title">
               <strong>Rear</strong>
-              <span>C3 top, C4 bottom</span>
+              <span>Rear Top, Rear Bottom</span>
             </div>
             <div class="physical-arms">
               <div class="physical-arm">
-                <div class="physical-arm-title">C3 Rear Top</div>
+                <div class="physical-arm-title">Rear Top</div>
                 <div class="rack-guide">
                   <div class="rack-row">
                     <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>25-26</small></div>
@@ -165,7 +165,7 @@
                 </div>
               </div>
               <div class="physical-arm">
-                <div class="physical-arm-title">C4 Rear Bottom</div>
+                <div class="physical-arm-title">Rear Bottom</div>
                 <div class="rack-guide">
                   <div class="rack-row">
                     <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>37-38</small></div>
@@ -238,6 +238,6 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-    <script src="./app.js?v=visual-before-calculation-20260713"></script>
+    <script src="./app.js?v=position-labels-20260713"></script>
   </body>
 </html>
