@@ -436,7 +436,10 @@ function renderDetails(result) {
   const rows = [
     ["Effective voltage", `${(result.system.sourceVoltage / 1000).toFixed(6)} kV`],
     ["CT ratio", `${result.system.ctPrimary}:1`],
-    ["C1 / C2 / C3 / C4", `${formatUf(result.armUf.C1)} / ${formatUf(result.armUf.C2)} / ${formatUf(result.armUf.C3)} / ${formatUf(result.armUf.C4)}`],
+    ["C1 Front Top", formatUf(result.armUf.C1)],
+    ["C2 Front Bottom", formatUf(result.armUf.C2)],
+    ["C3 Rear Top", formatUf(result.armUf.C3)],
+    ["C4 Rear Bottom", formatUf(result.armUf.C4)],
   ];
 
   detailsEl.innerHTML = rows

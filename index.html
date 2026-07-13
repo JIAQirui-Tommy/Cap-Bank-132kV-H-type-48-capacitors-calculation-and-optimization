@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>132kV H Type 48 Capacitor Bank Unbalanced Current</title>
-    <link rel="stylesheet" href="./styles.css?v=position-labels-20260713" />
+    <link rel="stylesheet" href="./styles.css?v=calculation-position-labels-20260713" />
   </head>
   <body>
     <main class="app">
@@ -227,8 +227,8 @@
         <p>
           Parallel group: <code>G = Ca + Cb</code>. Arm capacitance:
           <code>Carm = 1 / (1/G1 + ... + 1/G6)</code>. With relay treated as an
-          approximate short, top arms C1/C3 are in parallel and bottom arms C2/C4 are in
-          parallel. The displayed unbalanced current is
+          approximate short, top arms C1 Front Top / C3 Rear Top are in parallel and
+          bottom arms C2 Front Bottom / C4 Rear Bottom are in parallel. The displayed unbalanced current is
           <code>|IA - IC|</code>, equivalent to
           <code>wV |C1*C4 - C3*C2| / (C1 + C2 + C3 + C4)</code>.
         </p>
@@ -238,6 +238,6 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-    <script src="./app.js?v=position-labels-20260713"></script>
+    <script src="./app.js?v=calculation-position-labels-20260713"></script>
   </body>
 </html>
