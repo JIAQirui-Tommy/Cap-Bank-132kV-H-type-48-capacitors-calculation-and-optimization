@@ -16,7 +16,6 @@ const armsEl = document.querySelector("#arms");
 const phaseOverviewEl = document.querySelector("#phaseOverview");
 const activePhaseLabelEls = document.querySelectorAll(".activePhaseLabel");
 const systemVoltageEl = document.querySelector("#systemVoltage");
-const voltageBasisEl = document.querySelector("#voltageBasis");
 const frequencyEl = document.querySelector("#frequency");
 const nominalCapEl = document.querySelector("#nominalCap");
 const ctPrimaryEl = document.querySelector("#ctPrimary");
@@ -176,9 +175,8 @@ function getSystem() {
   const kv = readNumber(systemVoltageEl, 132);
   const ctPrimary = Math.max(readNumber(ctPrimaryEl, 1), 0.000001);
   return {
-    sourceVoltage: (voltageBasisEl.value === "phase" ? kv / Math.sqrt(3) : kv) * 1000,
+    sourceVoltage: (kv / Math.sqrt(3)) * 1000,
     displayKv: kv,
-    basis: voltageBasisEl.value,
     frequency: readNumber(frequencyEl, 50),
     ctPrimary,
   };
@@ -439,14 +437,6 @@ function renderDetails(result) {
     ["Effective voltage", `${(result.system.sourceVoltage / 1000).toFixed(6)} kV`],
     ["CT ratio", `${result.system.ctPrimary}:1`],
     ["C1 / C2 / C3 / C4", `${formatUf(result.armUf.C1)} / ${formatUf(result.armUf.C2)} / ${formatUf(result.armUf.C3)} / ${formatUf(result.armUf.C4)}`],
-    ["Top equivalent C1+C3", formatUf(result.armUf.C1 + result.armUf.C3)],
-    ["Bottom equivalent C2+C4", formatUf(result.armUf.C2 + result.armUf.C4)],
-    ["Total equivalent", formatUf(result.totalUf)],
-    ["Total current", formatA(result.totalCurrentA)],
-    ["I1 / I2", `${formatA(result.i1)} / ${formatA(result.i2)}`],
-    ["I3 / I4", `${formatA(result.i3)} / ${formatA(result.i4)}`],
-    ["C1*C4 - C3*C2", result.balanceNumerator.toExponential(6)],
-    ["Formula cross-check", formatMA(result.bridgeFormulaA * 1000)],
   ];
 
   detailsEl.innerHTML = rows
@@ -623,7 +613,6 @@ function createRecord(bestState) {
     phase: currentPhase,
     createdAt: new Date().toISOString(),
     voltageKv: readNumber(systemVoltageEl, 132),
-    voltageBasis: voltageBasisEl.value,
     frequency: readNumber(frequencyEl, 50),
     ctRatio: `${Math.max(readNumber(ctPrimaryEl, 1), 0.000001)}:1`,
     swapMode: swapPairsEl.value,
@@ -726,7 +715,6 @@ function exportRecord() {
     ["Phase", lastRecord.phase],
     ["Created At", lastRecord.createdAt],
     ["Voltage kV", lastRecord.voltageKv],
-    ["Voltage Basis", lastRecord.voltageBasis],
     ["Frequency Hz", lastRecord.frequency],
     ["CT Ratio", lastRecord.ctRatio],
     ["Swap Mode", lastRecord.swapMode],
@@ -803,7 +791,7 @@ armsEl.addEventListener("input", () => {
   updateSummary();
 });
 
-[systemVoltageEl, voltageBasisEl, frequencyEl, nominalCapEl, ctPrimaryEl].forEach((el) => {
+[systemVoltageEl, frequencyEl, nominalCapEl, ctPrimaryEl].forEach((el) => {
   el.addEventListener("input", () => updateSummary(lastBest));
   el.addEventListener("change", () => updateSummary(lastBest));
 });
