@@ -1,10 +1,10 @@
 const ARM_ORDER = ["C1", "C2", "C3", "C4"];
 const PHASE_ORDER = ["L1", "L2", "L3"];
 const ARM_LABELS = {
-  C1: "Front Top",
-  C2: "Front Bottom",
-  C3: "Rear Top",
-  C4: "Rear Bottom",
+  C1: "C1 Front Top",
+  C2: "C2 Front Bottom",
+  C3: "C3 Rear Top",
+  C4: "C4 Rear Bottom",
 };
 const GROUPS_PER_ARM = 6;
 const CAPS_PER_GROUP = 2;

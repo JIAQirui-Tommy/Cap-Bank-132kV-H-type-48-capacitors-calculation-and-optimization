@@ -14,7 +14,7 @@ Live app: https://jiaqirui-tommy.github.io/Cap-Bank-132kV-H-type-48-capacitors-c
 - Each arm has 6 parallel groups in series
 - Relay / CT branch is calculated using the approximate short-circuit model
 - CT ratio is entered as `primary:1`; secondary unbalanced current is primary current divided by the CT primary ratio
-- Visual guide maps C1/C2 to Front Top/Front Bottom and C3/C4 to Rear Top/Rear Bottom
+- Visual guide maps C1/C2 to C1 Front Top / C2 Front Bottom and C3/C4 to C3 Rear Top / C4 Rear Bottom
 
 ## Use
 
