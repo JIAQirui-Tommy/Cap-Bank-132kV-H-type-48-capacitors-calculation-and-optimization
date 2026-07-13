@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>132kV H Type 48 Capacitor Bank Unbalanced Current</title>
-    <link rel="stylesheet" href="./styles.css?v=template-footer-20260708" />
+    <link rel="stylesheet" href="./styles.css?v=ct-guide-20260713" />
   </head>
   <body>
     <main class="app">
@@ -46,6 +46,10 @@
           <input id="nominalCap" type="number" value="21.89" min="0" step="0.01" />
         </label>
         <label>
+          <span>CT ratio X : 1</span>
+          <input id="ctPrimary" type="number" value="1" min="0.000001" step="1" />
+        </label>
+        <label>
           <span>Swap pairs</span>
           <select id="swapPairs">
             <option value="auto" selected>Auto: fewest pairs for best</option>
@@ -71,12 +75,20 @@
 
       <section class="metrics" aria-live="polite">
         <article>
-          <span>Current unbalanced current</span>
+          <span>Primary unbalanced current</span>
           <strong id="currentUnbalance">0.000 mA</strong>
         </article>
         <article>
-          <span>After recommended swaps</span>
+          <span>Secondary unbalanced current</span>
+          <strong id="secondaryUnbalance">0.000 mA</strong>
+        </article>
+        <article>
+          <span>Recommended primary current</span>
           <strong id="bestUnbalance">0.000 mA</strong>
+        </article>
+        <article>
+          <span>Recommended secondary current</span>
+          <strong id="bestSecondaryUnbalance">0.000 mA</strong>
         </article>
         <article>
           <span>Improvement</span>
@@ -124,6 +136,99 @@
         </aside>
       </section>
 
+      <section class="visual-guide" aria-label="Physical capacitor position guide">
+        <div class="visual-head">
+          <h2>Visual Guide</h2>
+          <p>Front view mapping: C1/C2 are at the front, C3/C4 are at the rear. Each capacitor is shown as a vertical block with two terminal circles. Two capacitors form one group; two groups sit side by side; three rows make G1-G6.</p>
+        </div>
+        <div class="physical-stack">
+          <section class="physical-layer">
+            <div class="layer-title">
+              <strong>Front</strong>
+              <span>C1 top, C2 bottom</span>
+            </div>
+            <div class="physical-arms">
+              <div class="physical-arm">
+                <div class="physical-arm-title">C1 Front Top</div>
+                <div class="rack-guide">
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>1-2</small></div>
+                    <div class="guide-group"><span>G2</span><div class="cap-pair"><i></i><i></i></div><small>3-4</small></div>
+                  </div>
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G3</span><div class="cap-pair"><i></i><i></i></div><small>5-6</small></div>
+                    <div class="guide-group"><span>G4</span><div class="cap-pair"><i></i><i></i></div><small>7-8</small></div>
+                  </div>
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G5</span><div class="cap-pair"><i></i><i></i></div><small>9-10</small></div>
+                    <div class="guide-group"><span>G6</span><div class="cap-pair"><i></i><i></i></div><small>11-12</small></div>
+                  </div>
+                </div>
+              </div>
+              <div class="physical-arm">
+                <div class="physical-arm-title">C2 Front Bottom</div>
+                <div class="rack-guide">
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>13-14</small></div>
+                    <div class="guide-group"><span>G2</span><div class="cap-pair"><i></i><i></i></div><small>15-16</small></div>
+                  </div>
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G3</span><div class="cap-pair"><i></i><i></i></div><small>17-18</small></div>
+                    <div class="guide-group"><span>G4</span><div class="cap-pair"><i></i><i></i></div><small>19-20</small></div>
+                  </div>
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G5</span><div class="cap-pair"><i></i><i></i></div><small>21-22</small></div>
+                    <div class="guide-group"><span>G6</span><div class="cap-pair"><i></i><i></i></div><small>23-24</small></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="physical-layer rear-layer">
+            <div class="layer-title">
+              <strong>Rear</strong>
+              <span>C3 top, C4 bottom</span>
+            </div>
+            <div class="physical-arms">
+              <div class="physical-arm">
+                <div class="physical-arm-title">C3 Rear Top</div>
+                <div class="rack-guide">
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>25-26</small></div>
+                    <div class="guide-group"><span>G2</span><div class="cap-pair"><i></i><i></i></div><small>27-28</small></div>
+                  </div>
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G3</span><div class="cap-pair"><i></i><i></i></div><small>29-30</small></div>
+                    <div class="guide-group"><span>G4</span><div class="cap-pair"><i></i><i></i></div><small>31-32</small></div>
+                  </div>
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G5</span><div class="cap-pair"><i></i><i></i></div><small>33-34</small></div>
+                    <div class="guide-group"><span>G6</span><div class="cap-pair"><i></i><i></i></div><small>35-36</small></div>
+                  </div>
+                </div>
+              </div>
+              <div class="physical-arm">
+                <div class="physical-arm-title">C4 Rear Bottom</div>
+                <div class="rack-guide">
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>37-38</small></div>
+                    <div class="guide-group"><span>G2</span><div class="cap-pair"><i></i><i></i></div><small>39-40</small></div>
+                  </div>
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G3</span><div class="cap-pair"><i></i><i></i></div><small>41-42</small></div>
+                    <div class="guide-group"><span>G4</span><div class="cap-pair"><i></i><i></i></div><small>43-44</small></div>
+                  </div>
+                  <div class="rack-row">
+                    <div class="guide-group"><span>G5</span><div class="cap-pair"><i></i><i></i></div><small>45-46</small></div>
+                    <div class="guide-group"><span>G6</span><div class="cap-pair"><i></i><i></i></div><small>47-48</small></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
       <section class="formula">
         <h2>Calculation Model</h2>
         <p>
@@ -140,6 +245,6 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-    <script src="./app.js?v=template-footer-20260708"></script>
+    <script src="./app.js?v=ct-guide-20260713"></script>
   </body>
 </html>
