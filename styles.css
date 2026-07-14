@@ -622,162 +622,87 @@ select {
   line-height: 1.5;
 }
 
-.physical-stack {
+.fixed-visuals {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 
-.physical-layer {
+.fixed-visual-panel {
+  min-width: 0;
+  overflow: hidden;
   border: 2px solid #223246;
   border-radius: 8px;
-  overflow: hidden;
   background: #fff;
 }
 
-.rear-layer {
+.fixed-visual-panel.rear-fixed {
   border-color: #2d4638;
 }
 
-.layer-title {
+.fixed-visual-title {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
   padding: 9px 11px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   background: #223246;
   color: #fff;
 }
 
-.rear-layer .layer-title {
+.rear-fixed .fixed-visual-title {
   background: #2d4638;
 }
 
-.layer-title strong {
+.fixed-visual-title strong {
   font-size: 15px;
 }
 
-.layer-title span {
+.fixed-visual-title span {
   color: rgba(255, 255, 255, 0.78);
   font-size: 12px;
 }
 
-.physical-arms {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 7px;
-  padding: 7px;
-  background: #f7f9fb;
-}
-
-.physical-arm {
-  border: 1px solid #e4eaf0;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.physical-arm-title {
-  padding: 6px 8px;
-  border-bottom: 1px solid #e4eaf0;
-  font-weight: 800;
-  background: #fff;
-}
-
-.rack-guide {
-  display: grid;
-  gap: 5px;
-  padding: 6px;
+.connection-svg {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: auto;
   background:
     linear-gradient(90deg, transparent 0 47%, #d8e0e8 47% 53%, transparent 53%),
     #fbfcfd;
 }
 
-.rack-row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 6px;
+.connection-svg .rack-labels {
+  fill: var(--ink);
+  font-size: 15px;
+  font-weight: 800;
 }
 
-.guide-group {
-  display: grid;
-  grid-template-areas:
-    "label"
-    "caps"
-    "ids";
-  gap: 3px;
-  align-items: center;
-  justify-items: center;
-  min-width: 0;
-  padding: 5px;
-  border: 1px solid #dbe3eb;
-  border-radius: 7px;
-  background: #fff;
+.connection-svg .cap-body {
+  fill: #f9fbfc;
+  stroke: #17212b;
+  stroke-width: 2;
 }
 
-.guide-group span {
-  grid-area: label;
-  font-weight: 900;
-  font-size: 12px;
-  color: var(--ink);
-  text-align: center;
+.connection-svg .cap-wire {
+  fill: none;
+  stroke: #17212b;
+  stroke-width: 2;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
 }
 
-.guide-group small {
-  grid-area: ids;
-  color: var(--muted);
+.connection-svg .cap-terminals {
+  fill: #fff;
+  stroke: #17212b;
+  stroke-width: 2;
+}
+
+.connection-svg .cap-numbers {
+  fill: var(--muted);
   font-size: 11px;
-  text-align: center;
-}
-
-.cap-pair {
-  grid-area: caps;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 150px;
-  min-width: 78px;
-  justify-self: stretch;
-  padding: 0 4px;
-}
-
-@media (min-width: 921px) {
-  .cap-pair {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.cap-pair i {
-  position: relative;
-  display: block;
-  width: 24px;
-  height: 68px;
-  border: 2px solid #17212b;
-  border-radius: 4px;
-  background: linear-gradient(90deg, #ffffff, #eef2f5);
-}
-
-.cap-pair i::before,
-.cap-pair i::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  border: 2px solid #17212b;
-  border-radius: 50%;
-  background: #fff;
-  transform: translateX(-50%);
-}
-
-.cap-pair i::before {
-  top: 11px;
-}
-
-.cap-pair i::after {
-  bottom: 11px;
+  text-anchor: middle;
 }
 
 .site-footer {
@@ -894,8 +819,7 @@ code {
 
   .main-grid,
   .side,
-  .arms,
-  .physical-stack {
+  .arms {
     grid-template-columns: 1fr;
   }
 
@@ -959,45 +883,14 @@ code {
     padding: 11px;
   }
 
-  .physical-arms {
-    padding: 7px;
+  .fixed-visuals {
+    grid-template-columns: 1fr;
   }
 
-  .rack-row {
-    gap: 6px;
-  }
-
-  .guide-group {
-    padding: 5px;
-  }
-
-  .guide-group span {
-    text-align: center;
-  }
-
-  .cap-pair i {
-    width: 22px;
-    height: 64px;
-  }
-
-  .cap-pair {
-    max-width: none;
-    min-width: 76px;
-    padding: 0 6px;
-  }
-
-  .cap-pair i::before,
-  .cap-pair i::after {
-    width: 11px;
-    height: 11px;
-  }
-
-  .cap-pair i::before {
-    top: 10px;
-  }
-
-  .cap-pair i::after {
-    bottom: 10px;
+  .fixed-visual-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
   }
 
   .swap-title,

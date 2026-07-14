@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>132kV H Type 48 Capacitor Bank Unbalanced Current</title>
-    <link rel="stylesheet" href="./styles.css?v=calculation-position-labels-20260713" />
+    <link rel="stylesheet" href="./styles.css?v=fixed-svg-visual-20260714" />
   </head>
   <body>
     <main class="app">
@@ -98,90 +98,90 @@
           <h2>Visual Guide</h2>
           <p>Front view mapping: C1/C2 are C1 Front Top / C2 Front Bottom, C3/C4 are C3 Rear Top / C4 Rear Bottom. Each capacitor is shown as a vertical block with two terminal circles. Two capacitors form one group; two groups sit side by side; three rows make G1-G6.</p>
         </div>
-        <div class="physical-stack">
-          <section class="physical-layer">
-            <div class="layer-title">
+        <div class="fixed-visuals">
+          <section class="fixed-visual-panel">
+            <div class="fixed-visual-title">
               <strong>Front</strong>
-              <span>C1 Front Top, C2 Front Bottom</span>
+              <span>C1 Front Top / C2 Front Bottom</span>
             </div>
-            <div class="physical-arms">
-              <div class="physical-arm">
-                <div class="physical-arm-title">C1 Front Top</div>
-                <div class="rack-guide">
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>1-2</small></div>
-                    <div class="guide-group"><span>G2</span><div class="cap-pair"><i></i><i></i></div><small>3-4</small></div>
-                  </div>
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G3</span><div class="cap-pair"><i></i><i></i></div><small>5-6</small></div>
-                    <div class="guide-group"><span>G4</span><div class="cap-pair"><i></i><i></i></div><small>7-8</small></div>
-                  </div>
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G5</span><div class="cap-pair"><i></i><i></i></div><small>9-10</small></div>
-                    <div class="guide-group"><span>G6</span><div class="cap-pair"><i></i><i></i></div><small>11-12</small></div>
-                  </div>
-                </div>
-              </div>
-              <div class="physical-arm">
-                <div class="physical-arm-title">C2 Front Bottom</div>
-                <div class="rack-guide">
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>13-14</small></div>
-                    <div class="guide-group"><span>G2</span><div class="cap-pair"><i></i><i></i></div><small>15-16</small></div>
-                  </div>
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G3</span><div class="cap-pair"><i></i><i></i></div><small>17-18</small></div>
-                    <div class="guide-group"><span>G4</span><div class="cap-pair"><i></i><i></i></div><small>19-20</small></div>
-                  </div>
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G5</span><div class="cap-pair"><i></i><i></i></div><small>21-22</small></div>
-                    <div class="guide-group"><span>G6</span><div class="cap-pair"><i></i><i></i></div><small>23-24</small></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <svg class="connection-svg" viewBox="0 0 480 620" role="img" aria-label="Front capacitor physical connection guide">
+              <g class="rack-labels">
+                <text x="18" y="22">C1 Front Top</text>
+                <text x="18" y="322">C2 Front Bottom</text>
+              </g>
+              <g class="cap-body">
+                <rect x="44" y="40" width="24" height="56" rx="3" /><rect x="144" y="40" width="24" height="56" rx="3" /><rect x="312" y="40" width="24" height="56" rx="3" /><rect x="412" y="40" width="24" height="56" rx="3" />
+                <rect x="44" y="120" width="24" height="56" rx="3" /><rect x="144" y="120" width="24" height="56" rx="3" /><rect x="312" y="120" width="24" height="56" rx="3" /><rect x="412" y="120" width="24" height="56" rx="3" />
+                <rect x="44" y="200" width="24" height="56" rx="3" /><rect x="144" y="200" width="24" height="56" rx="3" /><rect x="312" y="200" width="24" height="56" rx="3" /><rect x="412" y="200" width="24" height="56" rx="3" />
+                <rect x="44" y="340" width="24" height="56" rx="3" /><rect x="144" y="340" width="24" height="56" rx="3" /><rect x="312" y="340" width="24" height="56" rx="3" /><rect x="412" y="340" width="24" height="56" rx="3" />
+                <rect x="44" y="420" width="24" height="56" rx="3" /><rect x="144" y="420" width="24" height="56" rx="3" /><rect x="312" y="420" width="24" height="56" rx="3" /><rect x="412" y="420" width="24" height="56" rx="3" />
+                <rect x="44" y="500" width="24" height="56" rx="3" /><rect x="144" y="500" width="24" height="56" rx="3" /><rect x="312" y="500" width="24" height="56" rx="3" /><rect x="412" y="500" width="24" height="56" rx="3" />
+              </g>
+              <g class="cap-wire">
+                <path d="M56 56 H424" /><path d="M56 84 H156 M324 84 H424" />
+                <path d="M56 136 H424" /><path d="M56 164 H156 M324 164 H424" />
+                <path d="M56 216 H156 M324 216 H424" /><path d="M56 244 H424" />
+                <path d="M424 84 H462 V164 H424" /><path d="M56 164 H18 V216 H56" /><path d="M424 216 H462 V384 H424" />
+                <path d="M56 356 H424" /><path d="M56 384 H156 M324 384 H424" />
+                <path d="M56 436 H156 M324 436 H424" /><path d="M56 464 H424" />
+                <path d="M56 516 H156 M324 516 H424" /><path d="M56 544 H424" />
+                <path d="M56 384 H18 V436 H56" /><path d="M424 436 H462 V516 H424" />
+              </g>
+              <g class="cap-terminals">
+                <circle cx="56" cy="56" r="7" /><circle cx="56" cy="84" r="7" /><circle cx="156" cy="56" r="7" /><circle cx="156" cy="84" r="7" /><circle cx="324" cy="56" r="7" /><circle cx="324" cy="84" r="7" /><circle cx="424" cy="56" r="7" /><circle cx="424" cy="84" r="7" />
+                <circle cx="56" cy="136" r="7" /><circle cx="56" cy="164" r="7" /><circle cx="156" cy="136" r="7" /><circle cx="156" cy="164" r="7" /><circle cx="324" cy="136" r="7" /><circle cx="324" cy="164" r="7" /><circle cx="424" cy="136" r="7" /><circle cx="424" cy="164" r="7" />
+                <circle cx="56" cy="216" r="7" /><circle cx="56" cy="244" r="7" /><circle cx="156" cy="216" r="7" /><circle cx="156" cy="244" r="7" /><circle cx="324" cy="216" r="7" /><circle cx="324" cy="244" r="7" /><circle cx="424" cy="216" r="7" /><circle cx="424" cy="244" r="7" />
+                <circle cx="56" cy="356" r="7" /><circle cx="56" cy="384" r="7" /><circle cx="156" cy="356" r="7" /><circle cx="156" cy="384" r="7" /><circle cx="324" cy="356" r="7" /><circle cx="324" cy="384" r="7" /><circle cx="424" cy="356" r="7" /><circle cx="424" cy="384" r="7" />
+                <circle cx="56" cy="436" r="7" /><circle cx="56" cy="464" r="7" /><circle cx="156" cy="436" r="7" /><circle cx="156" cy="464" r="7" /><circle cx="324" cy="436" r="7" /><circle cx="324" cy="464" r="7" /><circle cx="424" cy="436" r="7" /><circle cx="424" cy="464" r="7" />
+                <circle cx="56" cy="516" r="7" /><circle cx="56" cy="544" r="7" /><circle cx="156" cy="516" r="7" /><circle cx="156" cy="544" r="7" /><circle cx="324" cy="516" r="7" /><circle cx="324" cy="544" r="7" /><circle cx="424" cy="516" r="7" /><circle cx="424" cy="544" r="7" />
+              </g>
+              <g class="cap-numbers">
+                <text x="106" y="108">1-2</text><text x="374" y="108">3-4</text><text x="106" y="188">5-6</text><text x="374" y="188">7-8</text><text x="106" y="268">9-10</text><text x="374" y="268">11-12</text>
+                <text x="106" y="408">13-14</text><text x="374" y="408">15-16</text><text x="106" y="488">17-18</text><text x="374" y="488">19-20</text><text x="106" y="568">21-22</text><text x="374" y="568">23-24</text>
+              </g>
+            </svg>
           </section>
-          <section class="physical-layer rear-layer">
-            <div class="layer-title">
+          <section class="fixed-visual-panel rear-fixed">
+            <div class="fixed-visual-title">
               <strong>Rear</strong>
-              <span>C3 Rear Top, C4 Rear Bottom</span>
+              <span>C3 Rear Top / C4 Rear Bottom</span>
             </div>
-            <div class="physical-arms">
-              <div class="physical-arm">
-                <div class="physical-arm-title">C3 Rear Top</div>
-                <div class="rack-guide">
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>25-26</small></div>
-                    <div class="guide-group"><span>G2</span><div class="cap-pair"><i></i><i></i></div><small>27-28</small></div>
-                  </div>
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G3</span><div class="cap-pair"><i></i><i></i></div><small>29-30</small></div>
-                    <div class="guide-group"><span>G4</span><div class="cap-pair"><i></i><i></i></div><small>31-32</small></div>
-                  </div>
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G5</span><div class="cap-pair"><i></i><i></i></div><small>33-34</small></div>
-                    <div class="guide-group"><span>G6</span><div class="cap-pair"><i></i><i></i></div><small>35-36</small></div>
-                  </div>
-                </div>
-              </div>
-              <div class="physical-arm">
-                <div class="physical-arm-title">C4 Rear Bottom</div>
-                <div class="rack-guide">
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G1</span><div class="cap-pair"><i></i><i></i></div><small>37-38</small></div>
-                    <div class="guide-group"><span>G2</span><div class="cap-pair"><i></i><i></i></div><small>39-40</small></div>
-                  </div>
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G3</span><div class="cap-pair"><i></i><i></i></div><small>41-42</small></div>
-                    <div class="guide-group"><span>G4</span><div class="cap-pair"><i></i><i></i></div><small>43-44</small></div>
-                  </div>
-                  <div class="rack-row">
-                    <div class="guide-group"><span>G5</span><div class="cap-pair"><i></i><i></i></div><small>45-46</small></div>
-                    <div class="guide-group"><span>G6</span><div class="cap-pair"><i></i><i></i></div><small>47-48</small></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <svg class="connection-svg" viewBox="0 0 480 620" role="img" aria-label="Rear capacitor physical connection guide">
+              <g class="rack-labels">
+                <text x="18" y="22">C3 Rear Top</text>
+                <text x="18" y="322">C4 Rear Bottom</text>
+              </g>
+              <g class="cap-body">
+                <rect x="44" y="40" width="24" height="56" rx="3" /><rect x="144" y="40" width="24" height="56" rx="3" /><rect x="312" y="40" width="24" height="56" rx="3" /><rect x="412" y="40" width="24" height="56" rx="3" />
+                <rect x="44" y="120" width="24" height="56" rx="3" /><rect x="144" y="120" width="24" height="56" rx="3" /><rect x="312" y="120" width="24" height="56" rx="3" /><rect x="412" y="120" width="24" height="56" rx="3" />
+                <rect x="44" y="200" width="24" height="56" rx="3" /><rect x="144" y="200" width="24" height="56" rx="3" /><rect x="312" y="200" width="24" height="56" rx="3" /><rect x="412" y="200" width="24" height="56" rx="3" />
+                <rect x="44" y="340" width="24" height="56" rx="3" /><rect x="144" y="340" width="24" height="56" rx="3" /><rect x="312" y="340" width="24" height="56" rx="3" /><rect x="412" y="340" width="24" height="56" rx="3" />
+                <rect x="44" y="420" width="24" height="56" rx="3" /><rect x="144" y="420" width="24" height="56" rx="3" /><rect x="312" y="420" width="24" height="56" rx="3" /><rect x="412" y="420" width="24" height="56" rx="3" />
+                <rect x="44" y="500" width="24" height="56" rx="3" /><rect x="144" y="500" width="24" height="56" rx="3" /><rect x="312" y="500" width="24" height="56" rx="3" /><rect x="412" y="500" width="24" height="56" rx="3" />
+              </g>
+              <g class="cap-wire">
+                <path d="M56 56 H424" /><path d="M56 84 H156 M324 84 H424" />
+                <path d="M56 136 H424" /><path d="M56 164 H156 M324 164 H424" />
+                <path d="M56 216 H156 M324 216 H424" /><path d="M56 244 H424" />
+                <path d="M424 84 H462 V164 H424" /><path d="M56 164 H18 V216 H56" /><path d="M424 216 H462 V384 H424" />
+                <path d="M56 356 H424" /><path d="M56 384 H156 M324 384 H424" />
+                <path d="M56 436 H156 M324 436 H424" /><path d="M56 464 H424" />
+                <path d="M56 516 H156 M324 516 H424" /><path d="M56 544 H424" />
+                <path d="M56 384 H18 V436 H56" /><path d="M424 436 H462 V516 H424" />
+              </g>
+              <g class="cap-terminals">
+                <circle cx="56" cy="56" r="7" /><circle cx="56" cy="84" r="7" /><circle cx="156" cy="56" r="7" /><circle cx="156" cy="84" r="7" /><circle cx="324" cy="56" r="7" /><circle cx="324" cy="84" r="7" /><circle cx="424" cy="56" r="7" /><circle cx="424" cy="84" r="7" />
+                <circle cx="56" cy="136" r="7" /><circle cx="56" cy="164" r="7" /><circle cx="156" cy="136" r="7" /><circle cx="156" cy="164" r="7" /><circle cx="324" cy="136" r="7" /><circle cx="324" cy="164" r="7" /><circle cx="424" cy="136" r="7" /><circle cx="424" cy="164" r="7" />
+                <circle cx="56" cy="216" r="7" /><circle cx="56" cy="244" r="7" /><circle cx="156" cy="216" r="7" /><circle cx="156" cy="244" r="7" /><circle cx="324" cy="216" r="7" /><circle cx="324" cy="244" r="7" /><circle cx="424" cy="216" r="7" /><circle cx="424" cy="244" r="7" />
+                <circle cx="56" cy="356" r="7" /><circle cx="56" cy="384" r="7" /><circle cx="156" cy="356" r="7" /><circle cx="156" cy="384" r="7" /><circle cx="324" cy="356" r="7" /><circle cx="324" cy="384" r="7" /><circle cx="424" cy="356" r="7" /><circle cx="424" cy="384" r="7" />
+                <circle cx="56" cy="436" r="7" /><circle cx="56" cy="464" r="7" /><circle cx="156" cy="436" r="7" /><circle cx="156" cy="464" r="7" /><circle cx="324" cy="436" r="7" /><circle cx="324" cy="464" r="7" /><circle cx="424" cy="436" r="7" /><circle cx="424" cy="464" r="7" />
+                <circle cx="56" cy="516" r="7" /><circle cx="56" cy="544" r="7" /><circle cx="156" cy="516" r="7" /><circle cx="156" cy="544" r="7" /><circle cx="324" cy="516" r="7" /><circle cx="324" cy="544" r="7" /><circle cx="424" cy="516" r="7" /><circle cx="424" cy="544" r="7" />
+              </g>
+              <g class="cap-numbers">
+                <text x="106" y="108">25-26</text><text x="374" y="108">27-28</text><text x="106" y="188">29-30</text><text x="374" y="188">31-32</text><text x="106" y="268">33-34</text><text x="374" y="268">35-36</text>
+                <text x="106" y="408">37-38</text><text x="374" y="408">39-40</text><text x="106" y="488">41-42</text><text x="374" y="488">43-44</text><text x="106" y="568">45-46</text><text x="374" y="568">47-48</text>
+              </g>
+            </svg>
           </section>
         </div>
       </section>
@@ -238,6 +238,6 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-    <script src="./app.js?v=calculation-position-labels-20260713"></script>
+    <script src="./app.js?v=fixed-svg-visual-20260714"></script>
   </body>
 </html>
