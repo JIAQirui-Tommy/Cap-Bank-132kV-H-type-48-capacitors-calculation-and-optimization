@@ -675,6 +675,7 @@ select {
   fill: #111111;
   font-size: 10px;
   text-anchor: middle;
+  dominant-baseline: middle;
 }
 
 .site-footer {
