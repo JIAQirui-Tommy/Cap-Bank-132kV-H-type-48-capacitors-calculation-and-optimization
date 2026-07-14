@@ -668,40 +668,12 @@ select {
   width: 100%;
   min-width: 0;
   height: auto;
-  background:
-    linear-gradient(90deg, transparent 0 47%, #d8e0e8 47% 53%, transparent 53%),
-    #fbfcfd;
+  background: #ffffff;
 }
 
-.connection-svg .rack-labels {
-  fill: var(--ink);
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.connection-svg .cap-body {
-  fill: #f9fbfc;
-  stroke: #17212b;
-  stroke-width: 2;
-}
-
-.connection-svg .cap-wire {
-  fill: none;
-  stroke: #17212b;
-  stroke-width: 2;
-  stroke-linecap: square;
-  stroke-linejoin: miter;
-}
-
-.connection-svg .cap-terminals {
-  fill: #fff;
-  stroke: #17212b;
-  stroke-width: 2;
-}
-
-.connection-svg .cap-numbers {
-  fill: var(--muted);
-  font-size: 11px;
+.connection-svg .cap-index-labels {
+  fill: #111111;
+  font-size: 10px;
   text-anchor: middle;
 }
 
