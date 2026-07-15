@@ -678,7 +678,8 @@ select {
   dominant-baseline: middle;
 }
 
-.connection-svg .section-labels rect {
+.connection-svg .section-labels rect,
+.connection-svg .section-labels line {
   fill: none;
   stroke: #111111;
   stroke-width: 1;
