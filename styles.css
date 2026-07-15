@@ -678,6 +678,23 @@ select {
   dominant-baseline: middle;
 }
 
+.connection-svg .section-labels rect {
+  fill: none;
+  stroke: #111111;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.connection-svg .section-labels text {
+  fill: #111111;
+  font-size: 10px;
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
 .site-footer {
   padding: 18px 0 4px;
   color: var(--muted);
